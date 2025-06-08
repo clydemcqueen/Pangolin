@@ -21,14 +21,6 @@ option( BUILD_TESTS "Build Tests" ON )
 option( BUILD_TOOLS "Build Examples" ON )
 option( BUILD_EXAMPLES "Build Tools" ON )
 
-# Suppress some warnings
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-parentheses")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-copy")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-stringop-truncation")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-implicit-fallthrough")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-parameter")
-
 set (CMAKE_CXX_STANDARD 17)
 
 if(_WIN_)
@@ -61,6 +53,14 @@ endif()
 if(NOT MSVC)
     set( CMAKE_CXX_FLAGS "-Wall -Wextra ${CMAKE_CXX_FLAGS}" )
 endif()
+
+# Suppress some warnings
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-copy")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-deprecated-declarations")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-stringop-truncation")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-implicit-fallthrough")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-parameter")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-parentheses")
 
 if(ANDROID)
     set(ANDROID_PACKAGE_NAME "com.github.stevenlovegrove.pangolin")
