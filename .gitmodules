@@ -1,3 +1,4 @@
 [submodule "external/pybind11"]
 	path = external/pybind11
-	url = https://github.com/pybind/pybind11.git
+	url = https://github.com/clydemcqueen/pybind11.git
+	branch = build_orb_slam3
